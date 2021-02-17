@@ -12,12 +12,25 @@
 
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+
+		<!-- Custom style changes -->
+		<style>
+			/* Disable progress bar animation */
+			.reveal .progress span {
+				transition: none;
+			}
+
+			/* Multi-column layout */
+			.container {
+				display: grid;
+				grid-auto-flow: column;
+			}
+		</style>
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section data-markdown="concur.md"/>
 			</div>
 		</div>
 
@@ -30,7 +43,12 @@
 			// - https://revealjs.com/initialization/
 			// - https://revealjs.com/config/
 			Reveal.initialize({
+				controls: false,
+				controlsTutorial: false,
 				hash: true,
+				history: true,
+				navigationMode: "linear",
+				transition: "none",
 
 				// Learn about plugins: https://revealjs.com/plugins/
 				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
